@@ -156,9 +156,37 @@ function clearDiv(param) {
     }
 }
 
-
-
-
 document.querySelector("#imbuimentsOptions > select").addEventListener('click', function() {
     creatDivIcons()
 })
+
+function creatTable() {
+    // tags //
+    let tagTable = document.createElement('table');
+    let tagThead = document.createElement('thead');
+    let tagTbody = document.createElement('tbody')
+    let tagTr = document.createElement('tr');
+    // let tagTh = document.createElement('th');
+    let tagTd = document.createElement('td');
+    // creat table //
+    document.body.appendChild(tagTable).className = 'table'
+    let table = document.querySelector('.table')
+    // table head //
+    table.appendChild(tagThead)
+    let thead = document.querySelector(".table > thead")
+    // tr //
+    thead.appendChild(tagTr)
+    let trHead = document.querySelector(".table > thead > tr")
+    // th //
+    for (let index = 0; index < 3; index += 1){
+        let tagTh = document.createElement('th');
+        trHead.appendChild(tagTh).scope = 'col'
+        if (index == 0) {
+            trHead.childNodes[index].innerText = 'Quantidade'
+        } else if (index == 1) {
+            trHead.childNodes[index].innerText = 'Item'
+        }   else {
+            trHead.childNodes[index].innerText = 'Preço'
+        }
+    }
+}
