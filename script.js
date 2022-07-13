@@ -3,46 +3,110 @@ const imbuiments = {
         skillBoost: {
             club: {
                 icon: "https://www.tibiawiki.com.br/images/c/cd/Bash_%28Skillboost_de_Clava%29.gif",
-                tier1: "Cyclos Toe",
-                tier2: "Ogre Nose Ring",
-                tier3: "Warmaster's Wristguards",               
+                    tier1: {
+                        iten: "Cyclos Toe",
+                        qty: 20
+                    },
+                        
+                    tier2: {
+                        iten: "Ogre Nose Ring",
+                        qty: 15
+                    },
+                    tier3: {
+                        iten: "Warmaster's Wristguards",
+                        qty: 10
+                    }             
             },
             sword: {
                 icon:   "https://www.tibiawiki.com.br/images/2/2a/Slash_%28Skillboost_de_Espada%29.gif",
-                tier1:  "Lion's Mane",
-                tier2:  "Mooh'tha Shell",
-                tier3:  "War Crystal",              
+                tier1: {
+                    iten: "Lion's Mane",
+                    qty: 25
+                },
+                tier2: {
+                    iten: "Mooh'tha Shell",
+                    qty: 25
+                },  
+                tier3: {
+                    iten: "War Crystal",              
+                    qty: 5
+                }, 
             },
             axe: {
                 icon:   "https://www.tibiawiki.com.br/images/2/2c/Chop_%28Skillboost_de_Machado%29.gif",
-                tier1:  "Orc Tooth",
-                tier2:  "Battle Stone",
-                tier3:  "Moohtant Horn", 
+                tier1: {
+                    iten: "Orc Tooth",
+                    qty: 20
+                },  
+                tier2: {
+                    iten: "Battle Stone",
+                    qty: 25
+                }, 
+                tier3: {
+                    iten: "Moohtant Horn", 
+                    qty: 20
+                },
             },
-            distance:{
+            distance: {
                 icon:   "https://www.tibiawiki.com.br/images/e/e6/Precision_%28Skillboost_de_Dist%C3%A2ncia%29.gif",
-                tier1:  "Elven Scouting Glass",
-                tier2:  "Elven Hoof",
-                tier3:  "Metal Spike", 
+                tier1: {
+                    iten:"Elven Scouting Glass",
+                    qty:25
+                },  
+                tier2: {
+                    iten: "Elven Hoof",
+                    qty:    20
+                },  
+                tier3: {
+                    iten: "Metal Spike", 
+                    qty: 20
+                },  
             },
             magicLevel: {
                 icon:   "https://www.tibiawiki.com.br/images/3/3d/Epiphany_%28Skillboost_de_N%C3%ADvel_M%C3%A1gico%29.gif",
-                tier1:  "Elvish Talisman",
-                tier2:  "Broken Shamanic Staff",
-                tier3:  "Strand of Medusa Hair", 
+                tier1: {
+                    iten: "Elvish Talisman",
+                    qty: 25
+                }, 
+                tier2: {
+                    iten: "Broken Shamanic Staff",
+                    qty: 15
+                }, 
+                tier3: {
+                    iten: "Strand of Medusa Hair", 
+                    qty: 15
+                }, 
             },
             shield: {
                 icon:   "https://www.tibiawiki.com.br/images/6/62/Blockade_%28Skillboost_de_Escudo%29.gif",
-                tier1:  "Piece of Scarab Shell",
-                tier2:  "Brimstone Shell",
-                tier3:  "Frazzle Skin", 
+                tier1: {
+                    iten: "Piece of Scarab Shell",
+                    qty: 20
+                }, 
+                tier2: {
+                    iten: "Brimstone Shell",
+                    qty: 25
+                }, 
+                tier3: {
+                    iten: "Frazzle Skin", 
+                    qty: 25
+                }, 
             }
         },
         elementalDamage: {
             teste: {
-                tier1: "a",
-                tier2: "aa",
-                tier3: "aaa",               
+                tier1: {
+                    iten: "a",
+                    qty: 1
+                }, 
+                tier2: {
+                    iten: "a",
+                    qty: 1
+                }, 
+                tier3: {
+                    iten: "a",
+                    qty: 1
+                }, 
             }
         }
 
@@ -55,12 +119,12 @@ let imbuimentType = Object. keys(imbuiments.type);
 
 function creatDivIcons() {
     let imbuimentTypeClicked = document.querySelector("#imbuimentsOptions > select").value;
-    if (imbuimentTypeClicked != 'Imbuiment Type') {
+    if (imbuimentTypeClicked != 'Imbuement Type') {
        document.body.appendChild(div).id = "icons"
        let imbuimentsIconsDiv = document.querySelector("#icons");
        clearDiv(imbuimentsIconsDiv)
        creatButton(imbuimentTypeClicked)
-       } else if (imbuimentTypeClicked = 'Imbuiment Type') {
+       } else if (imbuimentTypeClicked = 'Imbuement Type') {
         let imbuimentsIconsDiv = document.querySelector("#icons");
         imbuimentsIconsDiv.remove();
     }
