@@ -53,32 +53,48 @@ let div = document.createElement('div');
 let imbuimentType = Object. keys(imbuiments.type);
 
 
-function creatDiv() {
-    let imbuimentsTypeSlected = document.querySelector("#imbuimentsOptions > select").value;
-    if (imbuimentsTypeSlected != 'Imbuiment Type') {
-       document.body.appendChild(div).id = "imbuimentsType"
-       creatButton(imbuimentsTypeSlected)
-       } else {
-        console.log('fudeu')
-       }
+function creatDivIcons() {
+    let imbuimentTypeClicked = document.querySelector("#imbuimentsOptions > select").value;
+    if (imbuimentTypeClicked != 'Imbuiment Type') {
+       document.body.appendChild(div).id = "icons"
+       let imbuimentsIconsDiv = document.querySelector("#icons");
+       clearDiv(imbuimentsIconsDiv)
+       creatButton(imbuimentTypeClicked)
+       } else if (imbuimentTypeClicked = 'Imbuiment Type') {
+        let imbuimentsIconsDiv = document.querySelector("#icons");
+        imbuimentsIconsDiv.remove();
+    }
 }
 
 function creatButton(param) {
     for (let value of imbuimentType) {
         if (value == param) {
-           let typeArray = Object. keys(imbuiments.type[value]) 
-              for (let index in typeArray) {
+            
+            let typeArray = Object. keys(imbuiments.type[value]) 
+            for (let index in typeArray) {
                 let button = document.createElement('button');
                 let img = document.createElement('img');
                 let skillToBoost = typeArray[index]
-                console.log(skillToBoost)
                 let icon = imbuiments.type[value][skillToBoost]['icon'];
-                console.log(icon)
-                document.querySelector("#imbuimentsType").appendChild(button).appendChild(img).src = icon;
-           }
+
+                document.querySelector("#icons").appendChild(button).appendChild(img).src = icon;
+            }
+        }
+    }
+}
+
+function clearDiv(param) {
+    if (param.children.length >= 1) {
+        for (let index = 1; index <= param.children.length; index += 0) {
+            console.log('teste')
+            param.removeChild(param.lastChild)
         }
     }
 }
 
 
- 
+
+
+document.querySelector("#imbuimentsOptions > select").addEventListener('click', function() {
+    creatDivIcons()
+})
